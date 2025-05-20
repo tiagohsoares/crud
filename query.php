@@ -1,5 +1,8 @@
-<?php 
+<?php
+class Cadastro {
+    private $db;
 
-include ('connect.php');
-
-$db->query();
+    public function __construct(PDO $pdo) {
+        $this->db = $pdo;
+    }
+}
