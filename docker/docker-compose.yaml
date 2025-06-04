@@ -1,0 +1,20 @@
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: programwithgio-app
+    restart: always
+    working_dir: /var/www/
+    volumes:
+      - ../src:/var/www
+  nginx:
+    image: nginx:latest
+    container_name: programwithgio-nginx
+    restart: always
+    ports:
+      - 9001:81
+    volumes:
+      - ../src:/var/www
+      - ./nginx:/etc/nginx/conf.d
