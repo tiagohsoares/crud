@@ -1,6 +1,6 @@
 <?php
 
-class Formulario {
+class Database {
     private $pdo;
 
     // Injeção de dependência via construtor

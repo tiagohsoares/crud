@@ -3,11 +3,15 @@ class conexao {
     private $pdo;
 
     public function __construct() {
-        $dsn = "mysql:host=localhost;dbname=meu_banco;charset=utf8mb4";
+
+        $dsn = "mysql:host=[$_ENV;dbname=meu_banco;charset=utf8mb4";
         $username = "root";
         $password = "";
-
-        $options = [
+        $localhost = $_ENV['DB_NAME'];
+        $dbname = $_ENV['DB_NAME']
+        $charset = 'utf8mb4';
+    
+        $options = [ 
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
             PDO::ATTR_EMULATE_PREPARES   => false,
